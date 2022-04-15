@@ -1,0 +1,45 @@
+<!--title key_words description jquery_js_url header_css_url page_css_url canonical footer_css_url page_js_url page_count search_rst-->
+<!--delopy_url case.link case.declaration case.img case.post case_list-->
+<!--home_page prev_page cur_page next_page end_page-->
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{{title}}</title>
+	<meta name="keywords" content={{key_words}}>
+	<meta name="description" content={{description}}>
+	<script src={{jquery_js_url}}></script>
+	<link rel="stylesheet" href={{header_css_url}} type="text/css">
+	<link rel="stylesheet" href={{page_css_url}} type="text/css">
+	<link rel="canonical" href={{canonical}}>
+	<link rel="stylesheet" href={{footer_css_url}} type="text/css">
+	<script src={{page_js_url}}></script>
+	</head>
+
+<body>
+{% include 'header.html' %}
+<div class="contenter">
+	<div class="main-content">
+		<div class="declaration"><p>{{delopy_url}}</p><p class="search-rst" >{{search_rst}}</p></div>
+
+		<div class="case-list"><ul>
+			{% for case in case_list %}
+			<li class="case_i case_list"><a href= {{case.link}} target="_blank"><img class="casepic" src={{case.img}} alt={{case.declaration}}></a><div class="case-info"><a class="meta-title" href={{case.link}} target="_blank"> <p>{{ case.declaration }}</p> </a><div class="meta-post">{{ case.post }}</div></div></li>
+			{% endfor %}
+		</ul></div>
+		<nav class="nav-pagination" role="navigation"><div class="nav-links"><a class="home-page" href={{home_page}}>首页 </a>{% if cur_page != 1 %}<a class="prev-page" href={{prev_page}}>上一页 </a>{% endif %}<span class="current-page">第 {{ cur_page }} 页 </span>{% if cur_page != page_count %}<a class="next-page" href={{next_page}}>下一页 </a>{% endif %}<a class="end-page" href={{end_page}}>尾页</a></div>
+		<div class="turn-page-input">
+			<form action="{{request.get_full_path}}" method="post">
+				{% csrf_token %}
+				<input type="text" autocomplete="off" onkeyup="value=value.replace(/[^\d]/g,'')" name="page" placeholder="输入跳转页数，共{{page_count}}页">&nbsp
+				<button class="turn-page-btn" type="submit">跳转</button>
+			</form>
+			</div>
+		</nav></div>
+</div>
+
+{% include 'footer.html' %}
+
+</body></html>

@@ -1,0 +1,11 @@
+.title-line{width:80%;height:20px;margin:30px auto;text-align:center;border-bottom:1px solid #ccc;}
+.tit{padding:0px 20px;background:#fff;font-size: 38px;}
+*{margin:0;padding:0;}
+.contenter{width:100%;margin:65px 0px;}
+.register-contenter{width:360px;margin:0 auto;padding:20px 0px;background:#fff;}
+.input-inner{width:360px;height:36px;margin:18px auto;border-radius:2px;font-size:20px;}
+#register-btn{cursor:pointer;font-weight:bold;background:#0cc;}
+#login-btn{cursor:pointer;font-weight:bold;background:#0cc;}
+.input-btn{width:160px;height:36px;border-radius:2px;font-size:20px;}
+.btn-box{width:360px;height:36px;margin:18px auto;}
+#register-form p{color:#f00;}

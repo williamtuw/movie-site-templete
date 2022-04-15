@@ -1,0 +1,21 @@
+.header{width:100%;height:80px;background:#0cc;position:relative;top:0px;left:0px;}
+.header-top{width:78%;height:100%;margin:0 auto;position:relative;top:0px;left:0px;}
+#logo{float:left;}
+.search{position:absolute;top:0px;right:80px;}
+#logo-img{height:68px;}
+#menu{float:right;position:relative;left:0px;top:0px;}
+#menu-img{height:28px;}
+.vip-path{float:right;overflow: hidden;padding:0px 8px 0px 0px;}
+.username{padding:0px 14px 0px 8px;float:right;max-width:64px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;}
+.search-bar-input{width:120px;height:32px;border-radius:10px;border: 0px;outline:none;}
+.logo-content{height:80px;display:table-cell;vertical-align:middle;}
+.menu-content{height:80px;display:table-cell;vertical-align:middle;}
+.search-bar{display:table-cell;vertical-align:middle;height:80px;}
+.search-bar-btn{background:rgba(0,0,0,0);border:0px;position:absolute;right:0px;top:25px;outline:none;cursor: pointer;}
+#menu-list{position:absolute;top:80px;right:-65px;background:#00dddd;width:180px;display:none;}
+.menu-ul li {height:30px;text-align:center;line-height:30px;border:6px solid #fff;}
+.menu-ul a{color:#060;text-decoration:none;}
+.menu-ul a:hover{font-weight:bold;}

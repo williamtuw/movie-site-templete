@@ -1,0 +1,65 @@
+<!--title jquery_js_url header_css_url  user_css_url footer_css_url user_js_url user_type_img user.serve_type vip_state user.name-->
+<!--user.email user.id user.create_time -->
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{{title}}</title>
+	<script src={{jquery_js_url}}></script>
+	<link rel="stylesheet" href={{header_css_url}} type="text/css">
+	<link rel="stylesheet" href={{user_css_url}} type="text/css">
+	<link rel="stylesheet" href={{footer_css_url}} type="text/css">
+	<script src={{user_js_url}}></script>
+	</head>
+
+<body>
+{% include 'header.html' %}
+
+<span id="user-sever-tab" style="display:none;">{{user.serve_type}}</span>
+<div class="contenter">
+        <div class="user-info">
+            <div class="user-info-content"><img src={{user_type_img}} alt="用户" id="user-img">  <p id="user-name" class={{user.name}} > {{user.name}}</p><a style="color:#d00;text-decoration:none;" href={{vip_path_url}}>{{vip_path}}</a>
+            <p>邮箱: {{user.email}}</p>
+            <p>编号: {{user.id}} &nbsp 注册于 {{user.create_time}}</p></div>
+        </div>
+        <div class="user-serve">
+            <div class="serve-item-list"><ul><li id="info_edit" class="serve-item info_edit_tab">编辑资料</li><li id="vip_serve" class="serve-item vip_serve_tab">会员服务</li><li id="collection" class="serve-item collection_tab">我的收藏</li><li id="cpwd_edit" class="serve-item cpwd_edit_tab">修改密码</li></ul></div>
+            <div class="info_edit tab-item">
+                <form action='{% url "user" "info_edit" %}' id="info-change-form" method="post" onsubmit="return false;">
+                    {% csrf_token %}
+                    <input type="text" autocomplete="off" name="uname" placeholder="昵称" class="tab-input"> <p class="uname-error-message" style="color:#f00;"></p>
+                    <input type="text" autocomplete="off" name="user-email" placeholder="请填写有效邮箱以便找回密码" class="tab-input"> <p class="user-email-error-message" style="color:#f00;"></p>
+                    <button type="button" class="check-btn" id="info_edit_btn">确定更改</button>
+                </form>
+            </div>
+            <div class="cpwd_edit tab-item">
+                <form action="{% url 'user' 'cpwd_edit' %}" id="cpwd-form" method="post" onsubmit="return false;">
+                    {% csrf_token %}
+                     <input type="password" autocomplete="off" name="userpwd" placeholder="新密码（6-16个字符组成，区分大小写）" class="tab-input"> <p class="userpwd-error-message" style="color:#f00;"></p>
+                    <input type="password" autocomplete="off" name="checkpwd" placeholder="确定新密码" class="tab-input"> <p class="checkpwd-error-message" style="color:#f00;"></p>
+                    <button type="button" class="check-btn" id="cpwd_edit_btn">确定更改</button>
+                </form>
+            </div>
+            <div class="collection tab-item">
+            </div>
+            <div class="vip_serve tab-item">
+                <p id="vip-state">{{vip_state}}</p>
+                <form action="{% url 'user' 'vip_serve' %}" id="vip-serve-form" method="post">
+                    {% csrf_token %}
+                    <input name="vip-serve-type" type="radio" value="day"> 1日卡(1.88元)<br>
+                    <input name="vip-serve-type" type="radio" value="week" checked="checked"/> 周费vip(8.8元/7天)<br>
+                    <input name="vip-serve-type" type="radio" value="month"> 月费vip(12.8元/月)<br>
+                    <input name="vip-serve-type" type="radio" value="year"> 年费vip(128元/年)<br>
+                    <p class="pay-type-text">支付方式</p>
+                    <input type="radio" name="pay-type" value="alipay" checked="checked"/> 支付宝<br>
+                    <button type="submit" class="check-btn" id="vip_serve_btn">立即续费</button>
+                </form>
+            </div>
+        </div>
+
+</div>
+{% include 'footer.html' %}
+
+</body></html>

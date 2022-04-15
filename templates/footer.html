@@ -1,0 +1,40 @@
+<!--delopy_url email top_img_url aiziyou_url-->
+<footer id="footer">
+    <div id="footer-content"><p class="footer_menus"><a href='{% url "home" %}'>首页</a> |
+        <a href={{delopy_url}}>{{delopy_url}}</a>
+    </p>
+        <p>Email {{email}}</p>
+        <p>版权所有 Copyright © 2018 {{aiziyou_url}} All Rights Reserved</p>
+    </div>
+</footer>
+<!--top-->
+<div class="nav-top"><img class="nav-top-img" src={{top_img_url}} alt="回到顶部"></div>
+<script>
+function navTopInit(){
+    var topbtn = $(".nav-top");
+    var timer = null;
+    //获取文档的高度
+    var body_height = document.body.clientHeight;
+
+    window.onscroll = function(){
+        //滚动超出高度，显示按钮，否则隐藏
+        var backtop = document.body.scrollTop;          //  滚动超过一频    应该显示
+        if(backtop >= body_height/6){
+            topbtn.css({"display":"block"});
+        }
+        else{
+            topbtn.css({"display":"none"});
+        }
+    }
+    topbtn.click(function(){
+    timer = setInterval(function () {
+            document.body.scrollTop *=4/5;  //高度不断减少
+            if(document.body.scrollTop ==0){  //滑动到顶端
+                clearInterval(timer);  //清除计时器
+            }
+        }, 30);
+    });
+}
+    navTopInit();
+
+</script>

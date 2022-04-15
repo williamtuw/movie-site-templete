@@ -1,0 +1,25 @@
+*{margin:0;padding:0;}
+.contenter{width:100%;}
+body{background:#e8e8e8;}
+
+#user-name{font-size:33px;color:#666;font-weight:bold;line-height:15px;text-align:center;padding:0px 0px 0px 12px;display:table-cell;vertical-align:bottom;}
+.user-info{width:100%;padding:20px 0px;background:#f1f1f1;margin:0px 0px 20px 0px;}
+.user-info p{height:35px;line-height:35px;}
+.user-info-content{width:70%;margin: 0 auto;}
+#user-img{float:left;width:34px;}
+.user-serve{width:100%;background:#f4f4f4;}
+.serve-item-list{overflow:hidden;width:100%;}
+.serve-item{list-style-type:none;width:24%;height:40px;line-height:40px;text-align:center;border-left:1px solid #e8e8e8;border-right:1px solid #e8e8e8;float:left;}
+.tab-item{width:100%;background:#fff;padding:60px 0px;display:none;}
+.tab-input{width:360px;height:36px;margin:18px auto;border-radius:2px;font-size:20px;}
+.check-btn{cursor:pointer;font-weight:bold;background:#0cc;width:360px;height:36px;border-radius:2px;font-size:20px;}
+#info-change-form{margin:0 auto;width:360px;}
+#cpwd-form{margin:0 auto;width:360px;}
+#vip-state{height:36px;line-height:36px;color:#0cf;text-align:center;}
+.pay-type-text{height:36px;line-height:36px;color:#0cf;text-align:center;}
+#vip-serve-form{width:360px;margin:0 auto;}
+#vip-serve-form input{margin:10px 0px;}
+div.collection{min-height:200px;}
+
+
+

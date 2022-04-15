@@ -1,0 +1,49 @@
+ <!--delopy_url logo_img_url is_vip  user_type_img user_type vip_path_url vip_path uname is_login menu_img_url search_img_url-->
+<div class="header">
+    <div class="header-top">
+                <div id="logo"><div class="logo-content"><a href="{% url 'home' %}"><img id="logo-img" src={{logo_img_url}} alt="爱自由-影视吧"></a></div></div>
+                <div id="menu">
+                    <div id="menu-list">
+                    <ul class="menu-ul" type="none">
+                        {% if is_login %}
+                        <li class="login-info"><img class="vip-info-img" src={{user_type_img}} alt={{user_type}}> <a class="vip-path" style="color:#d00;" href={{vip_path_url}}>{{vip_path}}</a> <a href="{% url 'user' 'info_edit' %}"><div class="username">{{uname}}</div></a> </li>
+                        <li class="logout"><a href="{% url 'logout' %}">注销</a></li>
+                        {% else %}
+                        <li class="login"><a href="{% url 'login' %}">登录</a></li>
+                        <li class="register"><a href="{% url 'register' %}">注册</a></li>
+                        {% endif %}
+
+                        <li id="home-page"><a href="{% url 'home' %}">首页</a></li>
+                        <li id="delopy-url"><a href={{delopy_url}} ></a></li>
+                    </ul>
+                    </div>
+                    <div class="menu-content"><img id="menu-img" src={{menu_img_url}} alt="菜单" ></div></div>
+                <div class="search"><div class="search-bar">
+
+                    <form action="{% url 'page' '1' %}">
+                        {% csrf_token %}
+                    <button class="search-bar-btn" type="submit"><img src={{search_img_url}} alt="查找"></button>
+                    <input class="search-bar-input"  type="text" name="kw" placeholder="输入关键字">
+                </form></div></div>
+        </div>
+</div>
+
+<script>
+function menuClick(e)
+{
+var menu_list = $("#menu-list");
+if((menu_list.css("display"))=="none")
+{
+menu_list.css({"display":"inline-block"});
+}
+else
+{
+menu_list.css({"display":"none"});
+}
+}
+
+  $("input.search-bar-input").focus(function(){$("input.search-bar-input").css({"width":"160px"});});
+  $("input.search-bar-input").blur(function(){$("input.search-bar-input").css({"width":"120px"});});
+  $("#menu-img").click(menuClick);
+
+</script>
