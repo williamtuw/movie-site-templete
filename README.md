@@ -1,4 +1,4 @@
-# 大纲
+# This is a movie-size templete base on Django-py
 ## 基本要素
 
 
