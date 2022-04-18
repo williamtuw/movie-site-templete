@@ -4,7 +4,7 @@
 
 ## 网页部分
 
-    - 内容网址: aiziyou.xx/page/1
+    - 内容网址:xxx.xx/page/1
     - 登录/注册页面
     - 播放界面
     - 用户界面
@@ -49,9 +49,6 @@
         - 可移植  可改动性
 
 
-    - 开发源码
-        - debug 带调式代码 带注释
-        - release 删除调试代码和注释等
     - 网站安全 建设
         - 表单数据验证是否合法
             - 攻击者可以伪装成客户发送非法表单数据
@@ -69,8 +66,7 @@
             - referrer 判断
             - 防止盗链
     - 测试功能 debug 日志
-    - 部署
-        - 注意查看编码是否一致，是否需要指定代码encoding
+    
     - 推广
 
 ## 重要部分
@@ -81,22 +77,13 @@
         - 用户推广
         - 搜索引擎
     - 收费
-        - 廉价
-        - 方式待定(安全第一)
+    
+  
             - 网卡联盟
             - 微信
             - 支付宝
                 - selenium+chrome查询 过程10s 有待优化
             - 赞助
-
-
-    - 支付成功后回到主页
-
-    - 支付detect
-        - selenium 和 chromedriver
-        - 无法察觉的爬虫工具 100% 模拟人为操作
-    - 安全第一
-        - 不透露任何身份信息
 
 
 # 网页结构
@@ -121,40 +108,7 @@
             - django 官网
 
 # problems
-    -  is_login>_<
-    - 注销与admin>_<
-        - - 后台登陆和前台同一个sid>_<
-    - session的删除观察>_<
-
-    - session add_to admin>_<
-    - admin list_display显示>_<
-         - 自定义字段>_<
-    - stime->create_time>_<
-    - DateField 的显示>_<
-        - USE_L10N =False
-        - DATE_FORMAT = "Y-m-d"
-        - DATETIME_FORMAT = "Y-m-d H:i:s"
-
-    - js中的变量@_@ -> >_<
-        - 通过html获取>_<
-        - js是否可以放在html中进行render!!!
-
-    - render 传入context >_<
-    - 一页10个case>_<
-
-    - delopy_css>_<   user_css优化 >_<
-
-
-    - 将数据导入页面中>_<
-    - 导入第一批数据>_<
-    - 比对数据和原网站数据>_<
-    - 每日更新数据库 >_<以后再说
-    - 后台无法改动数据 >_<成功解决
-        - 问题来源与python3.7 此版本不稳定
-        -  建议目前使用python3.6稳定版本
-    - user_info 显示vip_state>_<
-
-
+  
 
     - 先部署再说
         - 基础步骤
@@ -170,26 +124,15 @@
 
         - 部署前准备
 
-            - staticcollection
-            - setting
-                - DEBUG = FASLE ALLOWED_HOST 设置
-                - 其他setting设置
+          
             - 参看https://code.ziqiangxuetang.com/django/django-deploy.html
-         - 由于ubantu有三个python版本所以要指定用哪一个
+       
 
 
-- 此项目90% 完成
     - 最后步骤
         - 域名(简单)
         - 服务器
-        - 域名备案（主要难题）
-    - 项目优化
-        - 搭建自己的图片和视频服务器
-
-
-
-
-
-
+        - 域名备案
+  
 
 
