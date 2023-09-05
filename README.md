@@ -1,7 +1,9 @@
 # This is a movie-size templete base on Django-py
-## 基本要素
-
-
+## screenshots
+ ![Image text](screenshots/0d4dbfe5-f777-4a70-aef2-9a74e59cf190.png)
+ ![Image text](screenshots/67d34ee2-ba5d-4758-8930-4f813ae9b296.png)
+ 
+# 基本要素
 ## 网页部分
 
     - 内容网址:xxx.xx/page/1
